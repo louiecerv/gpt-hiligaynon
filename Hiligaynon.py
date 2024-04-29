@@ -31,7 +31,7 @@ async def app():
     """
     st.write(text)
 
-    text = """This is a simple translator that translates English to Akeanon and vice versa.
+    text = """This is a simple translator that translates English to Hiligaynon and vice versa.
     The app is based on a research project to develop a mobile tranlation app for various Visayan languages."""
     st.write(text)
     df = pd.read_csv("hiligaynon.csv", header=0)
