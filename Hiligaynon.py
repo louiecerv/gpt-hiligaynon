@@ -21,23 +21,24 @@ async def generate_response(question, context):
     return completion.choices[0].message.content
 
 async def app():
-    st.subheader("Hiligaynon-English / English Hiligaynon Translator")
+    st.subheader("Hiligaynon-English / English Hiligaynon Translator 2.0")
 
-    text = """Prof. Louie F. Cervantes, M. Eng. (Information Engineering) \n
-    CCS 229 - Intelligent Systems
-    Department of Computer Science
-    College of Information and Communications Technology
-    West Visayas State University
-    """
-    st.write(text)
+    with st.expander("Display info About the App"):        
+        text = """Prof. Louie F. Cervantes, M. Eng. (Information Engineering) \n
+        CCS 229 - Intelligent Systems
+        Department of Computer Science
+        College of Information and Communications Technology
+        West Visayas State University
+        """
+        st.write(text)
 
-    text = """This is a simple translator that translates English to Hiligaynon and vice versa.
-    The app is based on a research project to develop a mobile tranlation app for various Visayan languages."""
-    st.write(text)
-    df = pd.read_csv("hiligaynon.csv", header=0)
+        text = """This is a simple translator that translates English to Hiligaynon and vice versa.
+        The app is based on a research project to develop a mobile tranlation app for various Visayan languages."""
+        st.write(text)
+        df = pd.read_csv("hiligaynon.csv", header=0)
 
-    with st.expander("Click to display the training dataset"):
-        st.write(df)
+        with st.expander("Click to display the training dataset"):
+            st.write(df)
 
     # Define the options for the show selection
     show_options = ["English to Hiligaynon", "Hiligaynon to English"]
@@ -53,7 +54,7 @@ async def app():
             task = "translate to enlish:"
 
     # Text input for user question
-    question = st.text_input("Enter the sentence to translate:")
+    question = st.text_area("Enter the sentence to translate:")
     prompt = task + " " + question
     # Button to generate response
     if st.button("Translate"):
