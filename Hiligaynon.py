@@ -37,8 +37,8 @@ async def app():
         st.write(text)
         df = pd.read_csv("hiligaynon.csv", header=0)
 
-        with st.expander("Click to display the training dataset"):
-            st.write(df)
+    with st.expander("Click to display the training dataset"):
+        st.write(df)
 
     # Define the options for the show selection
     show_options = ["English to Hiligaynon", "Hiligaynon to English"]
