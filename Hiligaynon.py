@@ -23,7 +23,7 @@ async def generate_response(question, context):
 async def app():
     st.subheader("Hiligaynon-English / English Hiligaynon Translator 2.0")
 
-    with st.expander("Display info About the App"):        
+    with st.expander("Display info about the app"):        
         text = """Prof. Louie F. Cervantes, M. Eng. (Information Engineering) \n
         CCS 229 - Intelligent Systems
         Department of Computer Science
